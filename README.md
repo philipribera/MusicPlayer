@@ -7,7 +7,7 @@ The player consist of a number of predefined songs that can be played. The user 
 Some effort have been put in to make the player stylish. 
 
 # Description
-A basic and stylish music player. The music player looks and works great on smaller screens.
+A basic and stylish music player with a number of predefined songs.
 
 # Requirements 
 No special requirements needed.
