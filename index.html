@@ -1,0 +1,149 @@
+﻿<!doctype HTML>
+
+<html>
+
+<head>
+    <title>Music Player</title>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/stylesheetMusicPlayer.css">
+</head>
+
+<body>
+    <header>
+        <br>
+        <h1 id="mc">MEDIA CENTER</h1>
+        <img id="sym" class="open-player" src="images/powerNeutral50.png" />
+    </header>
+
+    <!-- MEDIA PLAYER -->
+    <!-- <div class="stylePlayer"> -->
+
+    <div class="container">
+        <div id="music-player" class="musicBefore" style="margin-bottom: 160px;">
+            <h2>MUSIC PLAYER</h2><br>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+
+                    <div class="row">
+                        <div id="display-set" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="gt">
+                                <audio id="mplayer" src="#">
+                                    <p>Message ...</p>
+                                </audio>
+
+                                <progress id="demo-progress" value="0">
+                                </progress>
+
+                                <div>
+                                    <span id="playMsg"></span>
+                                    <p id="dot-static" class="">
+                                        <span>.</span>
+                                        <span>.</span>
+                                        <span>.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel-buttons">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" id="play-music" class="btn " title="Play track">
+                                        <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" id="paus-music" class="btn " title="Paus">
+                                        <i class="fa fa-pause-circle fa-4x" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" id="stop-music" class="btn " title="Stop">
+                                        <i class="fa fa-stop-circle fa-4x" aria-hidden="true"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row vol-panel">
+                        <div id="mute-button" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <button type="button" id="mute-music" class="btn " title="Mute">
+                                <i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>
+                                <i id="muted" class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="hidden-xs col-sm-10 col-md-10 col-lg-10">
+                            <div id="volume-range">
+                                <p><small>VOLUME: <span id="show-vol"></span></small></p>
+                                <input type="range" id="volume-slider" name="volume-slider" min="0" max="100" step="1"
+                                    value="50" placeholder="50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <aside class="track-list">
+                        <ul>
+                            <li>
+                                <button id="track1" data-track="mp3free/Artofescapism_-_Coal_Miners.mp3" title="Coal Miners">Artofescapism</button>
+                            </li>
+                            <li>
+                                <button id="track2" data-track="mp3free/Art_Of_Escapism_-_Waltz_of_the_Renegade.mp3"
+                                    title="Waltz of the Renegade">Artofescapism</button>
+                            </li>
+                            <li>
+                                <button id="track4" data-track="mp3free/Pipe_Choir_-_07_-_Infinite_Light.mp3" title="Infinite Light">Pipe
+                                    Choir 4 /</button>
+                            </li>
+                            <li>
+                                <button id="track3" data-track="mp3free/Pipe_Choir_-_06_-_Savior.mp3" title="Savior">Pipe
+                                    Choir 6 /</button>
+                            </li>
+                            <li>
+                                <button id="track5" data-track="mp3free/Pipe_Choir_-_09_-_On_Axis.mp3" title="On Axis">Pipe
+                                    Choir 9 /</button>
+                            </li>
+                            <li>
+                                <button id="track5" data-track="mp3free/Artofescapism_-_Remember_the_Way.mp3" title="Remember the Way">Artofescapism</button>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer navbar-fixed-bottom">
+
+        <p style="text-align: center;" class="small-text">
+            &copy; 2018 - RIBERA<br>MEDIA PLAYER
+        </p>
+        <div class="license-credit">
+            <span class="license-credit-right">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="images/attibution_shareAlike_license.png"
+                        alt="license"></a><br>
+                <a href="http://freemusicarchive.org/music/Artofescapism/"><small>Artist: Artofescapism</small></a>
+            </span><br>
+
+            <span class="license-credit-left">
+                <a href="https://creativecommons.org/licenses/by/4.0/"><img src="images/music_attribution_license.png"
+                        alt="license"></a><br>
+                <a href="http://freemusicarchive.org/music/Pipe_Choir/Pipe_Choir/"><small>Artist: Pipe Choir</small></a>
+            </span>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/scriptMusicPlayer.js"></script>
+
+</body>
+
+</html>

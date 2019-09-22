@@ -1,0 +1,650 @@
+/**
+***************************************
+*****   STYLESHEET MUSIC-PLAYER	  ***** 
+*****	AUTHOR: PHILIP R	   	  *****
+***************************************
+**/
+
+/* Generic elements	*/
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 100%;
+    background-image: url(../images/carbonFibreV2.png);
+    background-color: #333;
+}
+
+header {
+    background: #555;
+    opacity: 0.88;
+    height: 180px;
+    text-align: center;
+    border-bottom: 3px groove rgb(220,20,20);
+}
+
+h1 {
+    font-family: 'Audiowide', Verdana, sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #eee;
+}
+
+h2, h3 {
+    color: #eee;
+    font-family: 'Audiowide', Tahoma, Verdana, sans-serif;
+    text-shadow: 0.5px -1px 0.5px #222;
+    padding-top: 5px;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background: #222;
+    opacity: 1;
+    clear: both;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+input {
+    outline: none;
+}
+
+.container {
+    max-width:;
+}
+
+.col-lg-12, .col-md-12, .col-sm-12, .col-xs-12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+/***  PANEL BUTTONS  ***/
+
+.btn {
+    font: 0.9em Arial, sans-serif;
+    color: #eee;
+    padding: 10px;
+}
+.btn-group button:hover {
+    opacity: 0.9;
+}
+.panel button:not(#mute-music) {
+    padding: 1px 4px;
+    border-radius: 50px;
+}
+
+#play-music {    
+    background-color: transparent;
+    color: rgb(58, 214, 58);
+}
+    #play-music:visited {
+        background: rgb(250,250,250);
+    }
+
+#paus-music {
+    background-color: transparent;
+    color: rgb(255,255,255);
+}
+
+#stop-music {
+    background-color: transparent;
+    color: rgb(254, 46, 46);
+}
+
+#mute-music {
+    padding: 0 0 0 12px;
+    margin-top: 28px;
+    background-color: transparent;
+    color: rgb(70,70,70);
+}
+
+    #mute-music:hover {
+        opacity: 0.8;
+    }
+
+.playingPressed {
+    color: blue;
+}
+
+.track-list button {
+    font-size: 1em;
+    border-radius: 1px;
+    border-color: rgb(60,60,60);
+    padding: 5px 2px;
+}
+
+    .track-list button:hover {
+        color: rgb(252,252,252);
+    }
+
+
+/*** ASIDE ***/
+
+aside {
+    vertical-align: top;
+    padding: 0px 5px;
+}
+
+    aside ul {
+        margin-top: 5px;
+        list-style-type: none;
+    }
+
+    aside button {
+        font-size: 0.85em;
+        color: #ddd;
+        font-family: Verdana, Geneva, Arial, sans-serif;
+        font-family: 'Questrial', sans-serif;
+        background: black;
+        padding: 3px 2px;
+        margin: 1px 0px;
+        padding: 0;
+        margin: 0;
+        width: 152px;
+    }
+
+    aside .active {
+        font-size: 0.92em;
+        color: rgb(10,230,10);
+    }
+
+
+/* Classes and Id:S */
+
+.light {
+    color: white;
+}
+
+.small-text {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: rgb(150,150,150);
+    font-size: 0.7em;
+    text-align: center;
+    line-height: 1.7em;
+    margin-top: 15px;
+}
+
+.license-credit-left {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin-left: 120px;
+    opacity: 0.9;
+}
+
+.license-credit-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin-right: 120px;
+    opacity: 0.9;
+}
+    .license-credit-left a img, .license-credit-right a img {
+        padding-bottom: 4px;
+    }
+
+.footer a {
+    color: rgb(230,110,110);
+}
+
+.trans {
+    background-color: #ffffff;
+    clear: both;
+}
+
+#sym {
+    font: 2.2em bold;
+}
+#sym:hover {
+    cursor: pointer;
+}
+.open-player {
+    font: 1.1em bold;
+    font-family: helvetica, sans-serif;
+    margin: 15px 0px 35px 0px;
+    background: transparent;    
+}
+.open-player2 {
+    margin: 15px 0px 35px 0px;
+    background: transparent;   
+}
+.open-player2 img {
+    width: 70px;
+    height: 70px;
+}
+.openPlayerActive {
+    font: 1.1em bold;
+    font-family: Helvetica, sans-serif;
+    margin: 15px 0px 35px 0px;
+    background: transparent;   
+}
+.openPlayerActive2 img {
+    width: 70px;
+    height: 70px;
+}
+.open-player:hover {    
+    opacity: 0.95;    
+}
+
+.musicText {
+    color: white;
+    font-style: italic;
+}
+
+.styleplayer {
+    display: none;
+}
+
+#music-player {
+    width: 40%;
+    min-width: 340px;
+    margin: 80px auto 0;
+    padding: 20px;
+    border: 2px solid #ddd;
+    background: -moz-linear-gradient(top, rgba(174,188,191,1) 0%, rgba(110,119,116,1) 20%, rgba(10,14,10,1) 60%, rgba(10,8,9,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(174,188,191,1) 0%, rgba(110,119,116,1) 20%, rgba(10,14,10,1) 60%, rgba(10,8,9,1) 100%);
+    background: -ms-linear-gradient(top, rgba(174,188,191,1) 0%, rgba(110,119,116,1) 20%, rgba(10,14,10,1) 60%, rgba(10,8,9,1) 100%);
+}
+
+#music-player h2 {
+    font-size: 1.4em;
+}
+
+#mplayer {
+    padding: 5px 0px;
+}
+
+.musicBefore {
+    display: none;
+}
+
+.gt {
+    padding: 10px;
+    margin: 15px 0;
+}
+
+#playMsg {
+    word-spacing: 8px;
+    word-spacing: 0;
+    padding: 5px 10px;
+    font-size: 0.95em;
+    font-size: 0.85em;
+    font-style: italic;
+    color: rgb(20,210,20);
+}
+
+#dot-static {
+    display: inline;    
+    color: transparent;
+}
+
+#muted {
+    display: none;
+    color: rgb(250,0,0);
+}
+
+/* PLAYING ANIMATION DOT */
+.dot-move {
+    display: inline;
+    margin-left: -8px;
+    letter-spacing: -2px;
+    color: rgb(20,200,20);
+    text-shadow: 1px 1px 0 rgb(20,250,20);
+}
+
+
+/***  ProgressBar/VolumeControl  ***/
+
+#volume-range {
+    padding: 12px 0;
+}
+
+    #volume-range p {
+        color: rgb(80,80,80);
+        padding-left: 4px;
+        margin-bottom: 15px;
+    }
+
+    #volume-range:hover p {
+        color: rgb(120,185,80);
+    }
+
+#volume-slider {
+    height: 12px;
+    background-color: rgba(50,50,50,0.5);
+    /*	transform:			rotate(-90deg) translate(-15px, 215px);	*/
+}
+
+/* OVERRULES BOOTSTRAP RULE */
+input[type=range] {
+    display: inline-block !important;
+}
+
+progress {
+    background: rgb(220,220,220) !important;
+    height: 20px;
+    border: 1px solid white;
+}
+
+#demo-progress {
+    background: rgb(220,220,220);
+    height: 20px;
+    width: 210px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 1px #333;
+    border-radius: 2px;
+}
+
+    #demo-progress::-moz-progress-bar {
+        background: -moz-linear-gradient(left, white, lightgreen, green);
+        opacity: 0.9;
+    }
+
+    #demo-progress::-webkit-progress-bar {
+        background: -webkit-linear-gradient(left, white, lightgreen, green);
+        opacity: 0.9;
+    }
+
+#demo-progress {
+    background: -ms-linear-gradient(left, white, lightgreen, green);
+    background: -webkit-linear-gradient(left, white, lightgreen, green);
+    background: linear-gradient(left, white, lightgreen, green);
+    opacity: 0.9;
+}
+
+/* volume slider range slider */
+input[type="range"] {
+    opacity: 0.8;
+    box-shadow: 1px 1px 1px black;
+    border: 1px solid rgba(20,20,20, 0.8);
+    background-color: rgb(50,50,50);
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 1px inset lightgray;
+    padding: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: rgb(50,50,50);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px inset lightgray;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgb(50,50,50);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#volume-slider, input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(50,50,50);
+    padding: 0;
+    margin-top: -14px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: rgb(200,200,200);
+    background: rgb(40,210,40);
+    border: 1px solid rgb(55,55,55);
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: rgb(200,200,200);
+    background: rgb(40,210,40);
+    border: 1px solid rgb(55,55,55);
+}
+
+input[type=range]:hover::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: rgb(25,255,25);
+    border: 2px solid rgb(55,55,55);
+}
+
+input[type=range]:hover::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: rgb(200,200,200);
+    background: rgb(25,255,25);
+    border: 1px solid rgb(55,55,55);
+}
+
+input[type=range]range-thumb {
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    border: 1px inset lightgray;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgb(50,50,50);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+        opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+        opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+        opacity: .2;
+    }
+}
+
+.dot-move span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    animation-duration: 2s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+    .dot-move span:nth-child(3) {
+        /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+        animation-delay: .2s;
+    }
+
+    .dot-move span:nth-child(4) {
+        /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+        animation-delay: .4s;
+    }
+
+    .fa-4x {
+        font-size: 3.5em;
+    }
+
+/*** MEDIA QUERIES  ***/
+
+
+@media screen and (max-width: 1200px) {
+
+    #music-player {
+        font-size: 138%;
+        width: 100%;
+        height: auto;        
+        margin: 80px auto;
+        padding: 20px;
+    }
+
+        #music-player h2 {
+            padding: 2px;
+            margin: 22px 0 20px 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+    #demo-progress {
+        text-align: center;
+        align-content: center;
+        background-color:;
+        width: 80%;
+        height: 30px;
+        padding: 5px 10px;
+        padding: 0;
+        margin: 0 0 28px 0;
+    }
+
+    #playMsg {
+        font-size: 1.4em;
+    }
+
+    #display-set {
+        text-align: center;
+    }
+
+    #mute-music {
+        padding: 20px 0 0 60px;
+    }
+
+    .vol-panel {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #volume-range {
+        width: 80%;
+        margin-top: 15px;
+    }
+
+        #volume-range p {
+            color: rgb(125,185,125);
+            text-align: center;
+            font-size: 1.25em;
+        }
+
+    .row-panel > div {
+        text-align: center;
+    }
+
+    .panel-buttons {
+        text-align: center;
+    }
+
+    aside {
+        text-align: center;
+        margin: 42px 0 32px 0;
+    }
+
+        aside button {
+            text-align: center;
+            width: 80%;
+        }
+
+    .track-list {
+        font-size: 148%;
+    }
+
+        .track-list li {
+            padding: 4px 0;
+        }
+
+        .track-list button {
+            padding: 10px 0;
+        }
+
+    footer {
+        height: 120px;
+    }
+
+    .license-credit span {
+        display: inline-block;
+        margin: 0;
+    }    
+  
+}
+
+@media screen and (max-width: 768px) {
+	
+	#mute-button {
+		float: none;
+		padding: 0;
+		margin: 22px auto 0;	
+		text-align: center;	
+	}
+	#mute-music {
+        padding: 0;
+        margin: 0;
+		color: rgb(241, 170, 77);
+    }		
+}
+
