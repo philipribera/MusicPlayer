@@ -1,5 +1,5 @@
 # MusicPlayer
-Music-player created in vanilla Javascript.
+A basic and stylish music player.
 
 # Motivation 
 The player was created with the purpose of improving my knowledge of Javascript.
